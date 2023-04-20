@@ -24,7 +24,8 @@ export default async function handleRequest(req: Request & { nextUrl?: URL }) {
     });
   }
 
-  const { pathname, search } = req.nextUrl ? req.nextUrl : new URL(req.url);
+  let { pathname, search } = req.nextUrl ? req.nextUrl : new URL(req.url);
+  pathname = pathname.replace(/^\/api/, "");
   const url = new URL(pathname + search, "https://api.openai.com").href;
   const headers = pickHeaders(req.headers, ["content-type", "authorization"]);
 
