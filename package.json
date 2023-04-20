@@ -13,7 +13,7 @@
     "deploy-cloudflare": "wrangler publish",
     "dev-next": "next",
     "vercel-build": "next build",
-    "start": "next start"
+    "start": "next start -p 3200"
   },
   "dependencies": {
     "next": "^13.2.4",
